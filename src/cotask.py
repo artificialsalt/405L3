@@ -70,7 +70,7 @@ class Task:
 
 
     def __init__(self, run_fun, name="NoName", priority=0, period=None,
-                 profile=False, trace=False, shares=()):
+                 profile=False, trace=False, mec=()):
         """!
         Initialize a task object so it may be run by the scheduler.
 
@@ -96,10 +96,7 @@ class Task:
         # The function which is run to implement this task's code. Since it 
         # is a generator, we "run" it here, which doesn't actually run it but
         # gets it going as a generator which is ready to yield values
-        if shares:
-            self._run_gen = run_fun(shares)
-        else:
-            self._run_gen = run_fun()
+        self._run_gen = run_fun(mec[0], mec[1], mec[2])
 
         ## The name of the task, hopefully a short and descriptive string.
         self.name = name
