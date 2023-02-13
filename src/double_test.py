@@ -1,14 +1,9 @@
 import serial 
-import time
 from matplotlib import pyplot
 
 with serial.Serial('COM10', 115200, timeout=None) as s_port:
     data_1 = s_port.read_until()
     data_2 = s_port.read_until()
-
-#print('Data received')
-#print(data_1)
-#print(data_2)
 
 # Create a list of values from the incoming string of data
 d1 = data_1.decode('utf-8').split(',')
