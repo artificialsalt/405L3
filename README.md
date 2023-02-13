@@ -5,8 +5,26 @@ This repository contains code that allows for task scheduling (the ability to do
 
 ## Usage
 
-1. Modify the test parameters as desired in main.py.
-2. Run double_test.py on the PC. Note that double_test is only configured to plot motor 1 position data by default.
+1. Modify the test parameters as desired in main.py. The relevant lines of code and their numbers are shown below.
+
+Gain/setpoint of motors:
+```
+40: C1 = closedloopcontrol.cl_loop(0.015, 5000)
+46: C2 = closedloopcontrol.cl_loop(0.015, 10000)
+```
+
+Task scheduling period:
+```
+50: task1 = cotask.Task(task_mc, name='Motor_1', priority=1, period=10,
+52: task2 = cotask.Task(task_mc, name='Motor_2', priority=2, period=10,
+```
+
+2. Run double_test.py on the PC. Note that double_test is only configured to plot motor 1 position data by default. In order to enable plotting of motor 2's position, uncomment the following line on line 30 in double_test.py:
+
+```
+30: #pyplot.plot(t2, p2)
+```
+
 3. Run main.py on the MicroPython board.
 
 ## Test results
