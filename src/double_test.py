@@ -1,6 +1,15 @@
+'''!
+@file double_test.py
+This file contains a program that receives data from two step response tests and plots it.
+
+@author Richard Kwan, Chayton Ritter, Jackie Chen
+@date 2023-Feb-07
+'''
+
 import serial 
 from matplotlib import pyplot
 
+# Read data from serial port
 with serial.Serial('COM10', 115200, timeout=None) as s_port:
     data_1 = s_port.read_until()
     data_2 = s_port.read_until()
@@ -26,6 +35,7 @@ for i in range(len(d2)):
     else:
         p2.append(int(d2[i]))
 
+# Plot data
 pyplot.plot(t1, p1)
 #pyplot.plot(t2, p2)
 pyplot.xlabel('Time [ms]')
