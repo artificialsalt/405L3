@@ -21,13 +21,17 @@ class cl_loop:
         '''
         
         # Class variables necessary for control
-        self.gain = gain                            ##< Kp of the system
-        self.setpoint = setpoint                    ##< Desired position (in encoder ticks)
-
+        ## Kp of the system
+        self.gain = gain
+        ## Desired position (in encoder ticks)
+        self.setpoint = setpoint
         # Class variables used for data plotting
-        self.pos_data = []                          ##< Single list for both position and data (alternating positions)
-        self.prev_time = utime.ticks_ms()           ##< Reference time to calculate time elapsed between encoder readings
-        self.time = 0                               ##< Time elapsed since beginning of step response test
+        ## Single list for both position and data (alternating positions)
+        self.pos_data = []                          
+        ## Reference time to calculate time elapsed between encoder readings
+        self.prev_time = utime.ticks_ms()           
+        ## Time elapsed since beginning of step response test
+        self.time = 0                               
 
     def run(self, output):
         '''!

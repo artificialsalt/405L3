@@ -26,17 +26,23 @@ class MotorDriver:
         '''
         
         # Pin and timer configurations
-        self.en_pin = pyb.Pin(en_pin, pyb.Pin.OUT_PP)           ##< Pin object for the enable pin
-        self.in1pin = pyb.Pin(in1pin, pyb.Pin.OUT_PP)           ##< Pin object for pin 1
-        self.in2pin = pyb.Pin(in2pin, pyb.Pin.OUT_PP)           ##< Pin object for pin 2
-        self.timer = pyb.Timer(timer, freq=20000)               ##< Timer object for the motor driver
+        ## Pin object for the enable pin
+        self.en_pin = pyb.Pin(en_pin, pyb.Pin.OUT_PP)           
+        ## Pin object for pin 1
+        self.in1pin = pyb.Pin(in1pin, pyb.Pin.OUT_PP)           
+        ## Pin object for pin 2
+        self.in2pin = pyb.Pin(in2pin, pyb.Pin.OUT_PP)           
+        ## Timer object for the motor driver
+        self.timer = pyb.Timer(timer, freq=20000)               
 
         # Disables motor pin for safety
         self.en_pin.low()
 
         # Configures pins and their appropriate timer channels to PWM mode
-        self.pwm1 = self.timer.channel(ch1, pyb.Timer.PWM, pin=self.in1pin)     ##< Channel object for PWM channel 1
-        self.pwm2 = self.timer.channel(ch2, pyb.Timer.PWM, pin=self.in2pin)     ##< Channel object for PWM channel 2
+        ## Channel object for PWM channel 1
+        self.pwm1 = self.timer.channel(ch1, pyb.Timer.PWM, pin=self.in1pin)    
+        ## Channel object for PWM channel 2 
+        self.pwm2 = self.timer.channel(ch2, pyb.Timer.PWM, pin=self.in2pin)    
 
     def enable_motor(self):
         '''!

@@ -25,15 +25,22 @@ class EncoderReader:
         '''
 
         # Pin, timer, and channel configuration
-        self.pin1 = pyb.Pin(pin1, pyb.Pin.OUT_PP)                               ##< Pin object for pin 1
-        self.pin2 = pyb.Pin(pin2, pyb.Pin.OUT_PP)                               ##< Pin object for pin 2
-        self.timer = pyb.Timer(timer, prescaler=0, period=0xFFFF)               ##< Timer object for the encoder 
-        self.ch1 = self.timer.channel(ch1, pyb.Timer.ENC_AB, pin=self.pin1)     ##< Channel object for channel 1
-        self.ch2 = self.timer.channel(ch2, pyb.Timer.ENC_AB, pin=self.pin2)     ##< Channel object for channel 2
+        ## Pin object for pin 1
+        self.pin1 = pyb.Pin(pin1, pyb.Pin.OUT_PP)                               
+        ## Pin object for pin 2
+        self.pin2 = pyb.Pin(pin2, pyb.Pin.OUT_PP)                               
+        ## Timer object for the encoder
+        self.timer = pyb.Timer(timer, prescaler=0, period=0xFFFF)               
+        ## Channel object for channel 1 
+        self.ch1 = self.timer.channel(ch1, pyb.Timer.ENC_AB, pin=self.pin1)    
+        ## Channel object for channel 2 
+        self.ch2 = self.timer.channel(ch2, pyb.Timer.ENC_AB, pin=self.pin2)    
 
         # Initialize encoder position to zero
-        self.position = 0   ##< Current position of the motor
-        self.prev_cnt = 0   ##< Reference count value for measuring difference between readings
+        ## Current position of the motor
+        self.position = 0   
+        ## Reference count value for measuring difference between readings
+        self.prev_cnt = 0   
 
     def zero(self):
         '''!
