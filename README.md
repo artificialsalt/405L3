@@ -19,7 +19,7 @@ The above plot was taken using the reference scheduling period of 10 ms. The mot
 
 ![7.5ms period](period7_5.png)
 
-The above plot was taken using the scheduling period of 7.5 ms. Attempts at scheduling the proportional controller faster than this period resulted in a memory allocation error. However, it is likely that this is due to the proportional controller collecting data points every time the run() method is performed. If it did not need to collect (and store) the position data, it could probably be run faster without encountering this issue.
+The above plot was taken using the scheduling period of 7.5 ms. Performance is marginally better than at 10ms. Attempts at scheduling the proportional controller faster than this period resulted in a memory allocation error. However, it is likely that this is due to the proportional controller collecting data points every time the run() method is performed. If it did not need to collect (and store) the position data, it could probably be run faster without encountering this issue.
 
 ![50ms period](period50.png)
 
