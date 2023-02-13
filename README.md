@@ -22,7 +22,7 @@ Task scheduling period:
 2. Run double_test.py on the PC. Note that double_test is only configured to plot motor 1 position data by default. In order to enable plotting of motor 2's position, uncomment the following line on line 30 in double_test.py:
 
 ```
-30: #pyplot.plot(t2, p2)
+40: #pyplot.plot(t2, p2)
 ```
 
 3. Run main.py on the MicroPython board.
