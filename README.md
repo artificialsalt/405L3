@@ -19,7 +19,7 @@ Task scheduling period:
 52: task2 = cotask.Task(task_mc, name='Motor_2', priority=2, period=10,
 ```
 
-2. Run double_test.py on the PC. Note that double_test is only configured to plot motor 1 position data by default. In order to enable plotting of motor 2's position, uncomment the following line on line 30 in double_test.py:
+2. Run double_test.py on the PC. Note that double_test is only configured to plot motor 1 position data by default. In order to enable plotting of motor 2's position, uncomment the following line on line 40 in double_test.py:
 
 ```
 40: #pyplot.plot(t2, p2)
