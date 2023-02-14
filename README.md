@@ -5,6 +5,8 @@ This repository contains code that allows for task scheduling (the ability to do
 
 ## Usage
 
+**WARNING:** This code uses a modified version of cotask.py that must be put into the board flash. Using the base version of cotask.py from the ME 405 Support Library will cause an error.
+
 1. Modify the test parameters as desired in main.py. The relevant lines of code and their numbers are shown below.
 
 Gain/setpoint of motors:
